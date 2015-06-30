@@ -15,13 +15,10 @@
  *
  * @version 2
  */
-IrrigationZone::IrrigationZone(char* name, float volumeLimit, time_t durationLimit, int relay, FlowMeter & meter) {
-  this->_name = name;
-  this->_valve = new Relay(relay);
-  this->_meter = &meter;
+IrrigationZone::IrrigationZone(char* name, float volumeLimit, time_t durationLimit, int relay, FlowMeter & meter)
+  : _name(name), _meter(&meter), _volumeLimit(volumeLimit), _durationLimit(durationLimit) {
 
-  this->_volumeLimit = volumeLimit;
-  this->_durationLimit = durationLimit;
+  this->_valve = new Relay(relay);
 }
 
 /**
@@ -32,14 +29,18 @@ IrrigationZone::IrrigationZone(char* name, float volumeLimit, time_t durationLim
  *
  * @version 2
  */
-OnTick_t IrrigationZone::start() {
+void IrrigationZone::start() {
+  noInterrupts();
+
   this->_duration = 0;
   this->_volume = 0;
 
-  this->_meter->reset();                                  // reset flow meter
+  this->_meter->reset();                               // reset flow meter
   this->_valve->on();                                  // turn on water flow
 
   this->_running = true;
+
+  interrupts();
 }
 
 /**

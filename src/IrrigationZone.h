@@ -26,7 +26,7 @@ class IrrigationZone
   public:
     IrrigationZone(char* name, float volumeLimit, time_t durationLimit, int relay, FlowMeter & meter = Meter); // Constructor
 
-    OnTick_t start();
+    void start();
     void tick(time_t tick);
     void stop();
     void info();
@@ -42,9 +42,5 @@ class IrrigationZone
     float _volume = 0.0f;       // volume within current irrigation interval
     float _volumeLimit = 0.0f;  // limit for volume
 };
-
-static OnTick_t IrrigationZoneHandler(IrrigationZone* zone) {
-  return ((*zone).start());
-}
 
 #endif   // IRRIGATIONZONE_H
