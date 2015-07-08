@@ -2,8 +2,8 @@
  * Irrigation Zone library
  *
  * @author sekdiy
- * @date 21.06.2015
- * @version 2
+ * @date 3.07.2015
+ * @version 3
  */
 
 #include "IrrigationZone.h"
@@ -14,6 +14,11 @@
  * constructor
  *
  * @version 2
+ * @param name
+ * @param volumeLimit
+ * @param durationLimit
+ * @param relay
+ * @param meter
  */
 IrrigationZone::IrrigationZone(char* name, float volumeLimit, time_t durationLimit, int relay, FlowMeter & meter)
   : _name(name), _meter(&meter), _volumeLimit(volumeLimit), _durationLimit(durationLimit) {
