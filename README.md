@@ -1,6 +1,6 @@
 # HydroZone
 
-An Arduino hydro zone library for irrigation control, featuring flow meter and valve relay support.
+An Arduino hydro zone library for irrigation control, featuring flow meter and zone valve support.
 
 ## Purpose ##
 
@@ -10,10 +10,18 @@ The [relay](https://en.wikipedia.org/wiki/Relay) controls a [zone valve](https:/
 
 The [flow meter](https://en.wikipedia.org/wiki/Flow_measurement) provides feedback about the amount of water spent at any given point in time during an irrigation cycle.
 
+## How to include the library
+
+### Arduino Library Manager
+
+First install Arduino IDE version 1.6.2 or newer, then simply use the Arduino Library Manager to install the library.
+
+Please see the following page for instructions: http://www.arduino.cc/en/Guide/Libraries#toc3.
+
 ## Limitations ##
 
 A **HydroZone** currently only supports one valve, effectively making it a *valve zone*.
 
 This is only a limitation regarding the total size of the spatial area to be irrigated. Large-scale hydro zones are sometimes subdivided into multiple valve zones. This would allow for better planning of potentially restricted pressure and/or flow in main or lateral lines.
 
-In order to circumvent the issues with this limitation, you can just model the different valve zones as multiple hydro zones (with an adjusted schedule and maybe a common flow meter).
+In order to work around this limitation, you can just model the valve zones as hydro zones (with an adjusted schedule and maybe a common flow meter).
