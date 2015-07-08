@@ -1,21 +1,23 @@
 #######################################
-# Syntax Coloring Map For FlowMeter
+# Syntax Coloring Map For HydroZone
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-IrrigationZone	 KEYWORD1
+HydroZone	 KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-start	 KEYWORD2
-tick	 KEYWORD2
-stop	 KEYWORD2
-info	 KEYWORD2
+start	     KEYWORD2
+tick	     KEYWORD2
+stop	     KEYWORD2
+getName    KEYWORD2
+isRunning  KEYWORD2
+getMeter   KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
@@ -24,4 +26,3 @@ info	 KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################
-
